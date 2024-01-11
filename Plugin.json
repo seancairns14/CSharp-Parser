@@ -1,0 +1,224 @@
+{
+    "file_path": "Plugin.cs",
+    "namespace": {
+        "TestPlugin": {
+            "line": 6,
+            "column": 10
+        }
+    },
+    "classes": {
+        "Plugin": {
+            "line": 12,
+            "column": 13,
+            "inheritance": "BasePlugin"
+        }
+    },
+    "methods": {
+        "Load": {
+            "line": 16,
+            "column": 25
+        },
+        "Unload": {
+            "line": 29,
+            "column": 25
+        }
+    },
+    "functions": {
+        "BepInPlugin": {
+            "line": 8,
+            "column": 1
+        },
+        "BepInDependency": {
+            "line": 10,
+            "column": 1
+        },
+        "LogInfo": {
+            "line": 19,
+            "column": 12
+        },
+        "Harmony": {
+            "line": 22,
+            "column": 23
+        },
+        "PatchAll": {
+            "line": 23,
+            "column": 17
+        },
+        "GetExecutingAssembly": {
+            "line": 23,
+            "column": 53
+        },
+        "RegisterAll": {
+            "line": 26,
+            "column": 24
+        },
+        "UnregisterAssembly": {
+            "line": 31,
+            "column": 24
+        },
+        "UnpatchSelf": {
+            "line": 32,
+            "column": 18
+        }
+    },
+    "using": {
+        "BepInEx": {
+            "line": 1,
+            "column": 7,
+            "path": "BepInEx"
+        },
+        "IL2CPP": {
+            "line": 2,
+            "column": 20,
+            "path": "BepInEx.Unity.IL2CPP"
+        },
+        "HarmonyLib": {
+            "line": 3,
+            "column": 6,
+            "path": "HarmonyLib"
+        },
+        "VampireCommandFramework": {
+            "line": 4,
+            "column": 6,
+            "path": "VampireCommandFramework"
+        }
+    },
+    "ids": {
+        "BepInEx": {
+            "line": 2,
+            "column": 6
+        },
+        "Unity": {
+            "line": 2,
+            "column": 14
+        },
+        "IL2CPP": {
+            "line": 2,
+            "column": 20
+        },
+        "HarmonyLib": {
+            "line": 3,
+            "column": 6
+        },
+        "VampireCommandFramework": {
+            "line": 9,
+            "column": 26
+        },
+        "TestPlugin": {
+            "line": 6,
+            "column": 10
+        },
+        "BepInPlugin": {
+            "line": 8,
+            "column": 1
+        },
+        "MyPluginInfo": {
+            "line": 22,
+            "column": 31
+        },
+        "PLUGIN_GUID": {
+            "line": 22,
+            "column": 44
+        },
+        "PLUGIN_NAME": {
+            "line": 8,
+            "column": 52
+        },
+        "PLUGIN_VERSION": {
+            "line": 8,
+            "column": 78
+        },
+        "BepInDependency": {
+            "line": 10,
+            "column": 1
+        },
+        "gg": {
+            "line": 10,
+            "column": 18
+        },
+        "deca": {
+            "line": 10,
+            "column": 21
+        },
+        "Bloodstone": {
+            "line": 11,
+            "column": 1
+        },
+        "API": {
+            "line": 11,
+            "column": 12
+        },
+        "Reloadable": {
+            "line": 11,
+            "column": 16
+        },
+        "Plugin": {
+            "line": 12,
+            "column": 13
+        },
+        "BasePlugin": {
+            "line": 12,
+            "column": 22
+        },
+        "Harmony": {
+            "line": 22,
+            "column": 23
+        },
+        "_harmony": {
+            "line": 32,
+            "column": 8
+        },
+        "Load": {
+            "line": 16,
+            "column": 25
+        },
+        "Log": {
+            "line": 19,
+            "column": 8
+        },
+        "LogInfo": {
+            "line": 19,
+            "column": 12
+        },
+        "PatchAll": {
+            "line": 23,
+            "column": 17
+        },
+        "System": {
+            "line": 23,
+            "column": 26
+        },
+        "Reflection": {
+            "line": 23,
+            "column": 33
+        },
+        "Assembly": {
+            "line": 23,
+            "column": 44
+        },
+        "GetExecutingAssembly": {
+            "line": 23,
+            "column": 53
+        },
+        "CommandRegistry": {
+            "line": 31,
+            "column": 8
+        },
+        "RegisterAll": {
+            "line": 26,
+            "column": 24
+        },
+        "Unload": {
+            "line": 29,
+            "column": 25
+        },
+        "UnregisterAssembly": {
+            "line": 31,
+            "column": 24
+        },
+        "UnpatchSelf": {
+            "line": 32,
+            "column": 18
+        }
+    }
+}

@@ -1,3 +1,9 @@
+## Table of Contents  
+
+  
+
+```csharp  
+
 ﻿using BepInEx;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
@@ -6,17 +12,17 @@ using VampireCommandFramework;
 namespace TestPlugin;
 
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
-[BepInDependency("gg.deca.VampireCommandFramework")]
-[BepInDependency("gg.deca.Bloodstone")]
+[BepInDependency(&quot;gg.deca.VampireCommandFramework&quot;)]
+[BepInDependency(&quot;gg.deca.Bloodstone&quot;)]
 [Bloodstone.API.Reloadable]
 public class Plugin : BasePlugin
 {
     Harmony _harmony;
-    
+
     public override void Load()
     {
         // Plugin startup logic
-        Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_GUID} version {MyPluginInfo.PLUGIN_VERSION} is loaded!");
+        Log.LogInfo($&quot;Plugin {MyPluginInfo.PLUGIN_GUID} version {MyPluginInfo.PLUGIN_VERSION} is loaded!&quot;);
 
         // Harmony patching
         _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
@@ -35,20 +41,26 @@ public class Plugin : BasePlugin
 
     // // Uncomment for example commmand or delete
 
-    // /// <summary> 
+    // /// &lt;summary&gt; 
     // /// Example VCF command that demonstrated default values and primitive types
     // /// Visit https://github.com/decaprime/VampireCommandFramework for more info 
-    // /// </summary>
-    // /// <remarks>
+    // /// &lt;/summary&gt;
+    // /// &lt;remarks&gt;
     // /// How you could call this command from chat:
     // ///
-    // /// .testplugin-example "some quoted string" 1 1.5
+    // /// .testplugin-example &quot;some quoted string&quot; 1 1.5
     // /// .testplugin-example boop 21232
     // /// .testplugin-example boop-boop
-    // ///</remarks>
-    // [Command("testplugin-example", description: "Example command from testplugin", adminOnly: true)]
+    // ///&lt;/remarks&gt;
+    // [Command(&quot;testplugin-example&quot;, description: &quot;Example command from testplugin&quot;, adminOnly: true)]
     // public void ExampleCommand(ICommandContext ctx, string someString, int num = 5, float num2 = 1.5f)
     // { 
-    //     ctx.Reply($"You passed in {someString} and {num} and {num2}");
+    //     ctx.Reply($&quot;You passed in {someString} and {num} and {num2}&quot;);
     // }
 }
+  
+
+[Link to Page1](Folder1/Page1.md)  
+
+```  
+

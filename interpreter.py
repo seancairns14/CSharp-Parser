@@ -1,5 +1,7 @@
-from typing import NamedTuple
+from typing import NamedTuple, Optional
+from dataclasses import dataclass, asdict
 import re
+import json
 
 
 class Token(NamedTuple):
@@ -8,6 +10,13 @@ class Token(NamedTuple):
     line: int
     column: int
 
+@dataclass
+class CleanedToken:
+    type: str
+    value: str
+    line: int
+    column: int
+    Depth: int
 
 def tokenize(code):
     keywords = [
@@ -52,31 +61,47 @@ def tokenize(code):
     tok_regex = '|'.join('(?P<%s>%s)' % pair for pair in token_specification)
     line_num = 1
     line_start = 0
-    valid = True
     for mo in re.finditer(tok_regex, code):
         kind = mo.lastgroup
         value = mo.group()
         column = mo.start() - line_start
-        if kind == 'COMMENT_SINGLE' or kind == 'COMMENT_MULTI':
-            valid = False
+        if kind == 'NUMBER':
+            value = float(value) if '.' in value else int(value)
+        elif kind == 'ID' and value.lower() in keywords:
+            kind = value.upper()
+        elif kind == 'NEWLINE':           
+            line_start = mo.end()
+            line_num += 1
             continue
-        if kind == 'NEWLINE':
-            valid = True
+        elif kind == 'SKIP':
             continue
-        if valid:
-            if kind == 'NUMBER':
-                value = float(value) if '.' in value else int(value)
-            elif kind == 'ID' and value.lower() in keywords:
-                kind = value.upper()
-            elif kind == 'END':
-                line_start = mo.end()
-                line_num += 1
-                continue
-            elif kind == 'SKIP':
-                continue
-            elif kind == 'MISMATCH':
-                print(f'Unexpected character {value!r} on line {line_num}, column {column}')
-                continue
-            yield Token(kind, value, line_num, column)
+        elif kind == 'MISMATCH':
+            print(f'Unexpected character {value!r} on line {line_num}, column {column}')
+            continue
+        yield Token(kind, value, line_num, column)
+
+def clean_tokens(tokens):  
+    del_lines = []
+    cleaned_tokens = []
+    for value in tokens:
+        if value.type == 'COMMENT_SINGLE':
+            del_lines.append(value.line)
+        if value.line not in del_lines:
+            cleaned_tokens.append(value)
+    
+    return cleaned_tokens
+
+
+def check_block(type, start, tokens):
+    block = []
+    for token in tokens[start:]:
+        if token.type in ('LBRACK', 'LPAREN', 'LSQBRACK'):
+            check_block()
+        elif token.type == type:
+            return 
+        
+
+            
+
 
 
